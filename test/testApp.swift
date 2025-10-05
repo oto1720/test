@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct testApp: App {
@@ -13,5 +14,8 @@ struct testApp: App {
         WindowGroup {
             ContentView()
         }
+        // Memoモデルの永続化コンテナを環境に設定します。
+        // これにより、アプリ内のどのビューからでもデータにアクセスできるようになります。
+        .modelContainer(for: Memo.self)
     }
 }
